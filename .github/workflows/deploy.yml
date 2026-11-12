@@ -1,4 +1,4 @@
-name: Test GitHub Runner
+name: Deploy HTML CSS
 
 on:
   push:
@@ -6,12 +6,15 @@ on:
       - master
 
 jobs:
-  test:
+  deploy:
     runs-on: self-hosted
 
     steps:
-      - name: Test runner
+      - name: Récupérer le code source
+        uses: actions/checkout@v4
+
+      - name: Déployer le projet
         run: |
-          echo "GitHub Actions fonctionne !"
-          hostname
-          whoami
+          echo "Début du déploiement..."
+          rsync -av --delete --exclude='.git/' ./ /opt/projects/testGitAction/
+          echo "Déploiement terminé."
