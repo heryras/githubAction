@@ -1,18 +1,17 @@
-name: Deploy HTML CSS
+name: Test GitHub Runner
 
 on:
   push:
     branches:
-      - master
+      - main
 
 jobs:
-  deploy:
+  test:
     runs-on: self-hosted
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Deploy website
+      - name: Test runner
         run: |
-          sudo cp -r ./* /opt/projects/testGitAction/
+          echo "GitHub Actions fonctionne !"
+          hostname
+          whoami
