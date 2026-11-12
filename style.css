@@ -1,0 +1,243 @@
+/* Variables pour personnaliser facilement le thème */
+:root {
+    --primary-color: #4f46e5;       /* Indigo moderne */
+    --primary-hover: #4338ca;
+    --bg-gradient-1: #eef2ff;
+    --bg-gradient-2: #e0e7ff;
+    --card-bg: #ffffff;
+    --text-main: #111827;
+    --text-muted: #6b7280;
+    --border-color: #d1d5db;
+    --focus-ring: rgba(79, 70, 229, 0.2);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--bg-gradient-1) 0%, var(--bg-gradient-2) 100%);
+    padding: 20px;
+    color: var(--text-main);
+}
+
+/* Carte principale */
+.login-container {
+    background: var(--card-bg);
+    width: 100%;
+    max-width: 420px;
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 
+                0 8px 10px -6px rgba(0, 0, 0, 0.01);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+/* En-tête */
+.login-header {
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+.logo {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 52px;
+    height: 52px;
+    background-color: #eef2ff;
+    color: var(--primary-color);
+    border-radius: 12px;
+    margin-bottom: 16px;
+}
+
+.login-header h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+    letter-spacing: -0.025em;
+}
+
+.login-header p {
+    font-size: 0.925rem;
+    color: var(--text-muted);
+}
+
+/* Formulaire */
+.input-group {
+    margin-bottom: 20px;
+}
+
+.label-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 6px;
+}
+
+label {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 500;
+    margin-bottom: 6px;
+    color: var(--text-main);
+}
+
+.label-row label {
+    margin-bottom: 0;
+}
+
+.forgot-password {
+    font-size: 0.825rem;
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.forgot-password:hover {
+    color: var(--primary-hover);
+    text-decoration: underline;
+}
+
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 12px 14px;
+    font-size: 0.95rem;
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+input[type="email"]::placeholder,
+input[type="password"]::placeholder {
+    color: #9ca3af;
+}
+
+/* Effet au clic dans le champ */
+input[type="email"]:focus,
+input[type="password"]:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 4px var(--focus-ring);
+}
+
+/* Case à cocher */
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 24px;
+}
+
+.checkbox-group input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    accent-color: var(--primary-color);
+    cursor: pointer;
+}
+
+.checkbox-group label {
+    margin-bottom: 0;
+    font-size: 0.875rem;
+    color: var(--text-muted);
+    cursor: pointer;
+}
+
+/* Bouton principal */
+.btn-primary {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-hover);
+}
+
+.btn-primary:active {
+    transform: scale(0.99);
+}
+
+/* Séparateur */
+.divider {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 24px 0;
+    color: var(--text-muted);
+    font-size: 0.825rem;
+}
+
+.divider::before,
+.divider::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.divider span {
+    padding: 0 12px;
+}
+
+/* Bouton Google */
+.btn-social {
+    width: 100%;
+    padding: 11px;
+    background-color: white;
+    color: var(--text-main);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    font-size: 0.925rem;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: background-color 0.2s;
+}
+
+.btn-social:hover {
+    background-color: #f9fafb;
+}
+
+/* Lien d'inscription */
+.signup-link {
+    text-align: center;
+    margin-top: 24px;
+    font-size: 0.875rem;
+    color: var(--text-muted);
+}
+
+.signup-link a {
+    color: var(--primary-color);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.signup-link a:hover {
+    text-decoration: underline;
+}
+
+/* Adaptation mobile */
+@media (max-width: 480px) {
+    .login-container {
+        padding: 28px 20px;
+    }
+}
